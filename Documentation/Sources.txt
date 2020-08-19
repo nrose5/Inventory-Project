@@ -1,0 +1,8 @@
+CSS Arrows:
+https://www.w3schools.com/howto/howto_css_arrows.asp
+
+Hiding/Showing Elements
+https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+
+Getting Element From Event
+https://stackoverflow.com/questions/11741070/how-to-get-the-element-clicked-on
