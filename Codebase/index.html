@@ -18,29 +18,43 @@
 
 
   <!-- Locations -->
-  <div id="location" style="width: 10em; margin:auto">
+  <div id="location" style="width: 15em; margin:auto; cursor: pointer;">
     <span>Select Location...</span>
     <span class="arrow right"></span>
   </div>
 
-  <div id="locationList" style="display: none;">
-    <div class="locationEntry" style="width: 24em;">
-      <span id="drag">☰</span>
-      <span id="name" style="width: 17em;">Lorem Ipsum</span>
-      <span id="edit">Edit</span>
-      <span id="delete">Delete</span>
-    </div>
-
-    <div class="locationEntry" style="width: 24em;">
-      <span id="drag">☰</span>
-      <span id="name" style="width: 17em;">Alpha Beta Charlie</span>
-      <span id="edit">Edit</span>
-      <span id="delete">Delete</span>
-    </div>
+  <div id="locationList" style="display: none; width: 30em;">
+    <ul>
+      <li draggable="true" style="display: none;">
+        <div class="name" style="width: 20em; cursor: pointer;">Default</div>
+        <div class="edit" style="width: 2em; margin-right: 2em; cursor: pointer;">Edit</div>
+        <div class="delete" style="cursor: pointer;">Delete</div>
+      </li>
+      <li draggable="true"> 
+        <div class="name" style="width: 20em; cursor: pointer;">Shelf 2</div>
+        <div class="edit" style="width: 2em; margin-right: 2em; cursor: pointer;">Edit</div>
+        <div class="delete" style="cursor: pointer;">Delete</div>
+      </li>
+      <li draggable="true">
+        <div class="name" style="width: 20em; cursor: pointer;">Table near the speaker on the right wall on the left of the door</div>
+        <div class="edit" style="width: 2em; margin-right: 2em; cursor: pointer;">Edit</div>
+        <div class="delete" style="cursor: pointer;">Delete</div>
+      </li>
+      <li draggable="true">
+        <div class="name" style="width: 20em; cursor: pointer;">Shelf 3</div>
+        <div class="edit" style="width: 2em; margin-right: 2em; cursor: pointer;">Edit</div>
+        <div class="delete" style="cursor: pointer;">Delete</div>
+      </li>
+      <li draggable="true">
+        <div class="name" style="width: 20em; cursor: pointer;">Shelf 4</div>
+        <div class="edit" style="width: 2em; margin-right: 2em; cursor: pointer;">Edit</div>
+        <div class="delete" style="cursor: pointer;">Delete</div>
+      </li>
+    </ul>
+    <button id="newLocation" style="width: 100%;">New Location</button>
   </div>
 
   <!-- Categories -->
-
 
   <!-- Data -->
 

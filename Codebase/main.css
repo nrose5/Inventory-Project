@@ -2,28 +2,39 @@ body {
     text-align: center;
 }
 
+button {
+    padding: 0;
+}
+
+/* --- Location Selection ---*/
 #location {
     margin: auto;
     font-size: 2em;
-    background-color: rgb(22, 165, 22);
+    background-color: rgb(119, 136, 119);
     color: black;
 }
 
-.locationList {
+#locationList {
     margin: auto;
 }
 
-.locationEntry {
-    margin: auto;
-    margin-top: 1em;
-    padding-bottom: 0.2em;
-    background-color: rgb(189, 189, 189);
+ul {
+    margin:0;
+    padding:0;
+  }
+li {
+    cursor:move;
+    display:block;
+    padding:20px 10px;
+    background:white;
+    border-bottom:solid 1px gray;
+    border-left:solid 1px gray;
+    border-right:solid 1px gray;
     text-align: left;
 }
 
-.locationEntry span {
+li div {
     display: inline-block;
-    border: 1px solid black;
 }
 
 .arrow {
