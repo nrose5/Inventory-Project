@@ -8,45 +8,28 @@
   <meta name="description" content="Inventory Manager">
   <meta name="author" content="Noah Rose">
 
+  <link rel="shortcut icon" href="#" /> <!-- favicon.ico missing fix -->
   <link rel="stylesheet" href="main.css">
   <script src="Scripts/main.js"></script>
-
 </head>
 
 <body>
   <!-- Search -->
-
+  <div id="search">
+    <button>Search</button>
+    <textarea style="resize: none;">Enter Search Term...</textarea>
+  </div>
 
   <!-- Locations -->
   <div id="location" style="width: 15em; margin:auto; cursor: pointer;">
     <span>Select Location...</span>
-    <span class="arrow right"></span>
+    <span class="arrow down" style="text-align: right;"></span>
   </div>
 
-  <div id="locationList" style="display: none; width: 30em;">
+  <div id="locationList" style="display: block; width: 30em;">
     <ul>
       <li draggable="true" style="display: none;">
         <div class="name" style="width: 20em; cursor: pointer;">Default</div>
-        <div class="edit" style="width: 2em; margin-right: 2em; cursor: pointer;">Edit</div>
-        <div class="delete" style="cursor: pointer;">Delete</div>
-      </li>
-      <li draggable="true"> 
-        <div class="name" style="width: 20em; cursor: pointer;">Shelf 2</div>
-        <div class="edit" style="width: 2em; margin-right: 2em; cursor: pointer;">Edit</div>
-        <div class="delete" style="cursor: pointer;">Delete</div>
-      </li>
-      <li draggable="true">
-        <div class="name" style="width: 20em; cursor: pointer;">Table near the speaker on the right wall on the left of the door</div>
-        <div class="edit" style="width: 2em; margin-right: 2em; cursor: pointer;">Edit</div>
-        <div class="delete" style="cursor: pointer;">Delete</div>
-      </li>
-      <li draggable="true">
-        <div class="name" style="width: 20em; cursor: pointer;">Shelf 3</div>
-        <div class="edit" style="width: 2em; margin-right: 2em; cursor: pointer;">Edit</div>
-        <div class="delete" style="cursor: pointer;">Delete</div>
-      </li>
-      <li draggable="true">
-        <div class="name" style="width: 20em; cursor: pointer;">Shelf 4</div>
         <div class="edit" style="width: 2em; margin-right: 2em; cursor: pointer;">Edit</div>
         <div class="delete" style="cursor: pointer;">Delete</div>
       </li>

@@ -6,6 +6,20 @@ button {
     padding: 0;
 }
 
+/* --- Search --- */
+#search {
+    display: inline-block;
+    position: relative;
+    left: 30em;
+    margin-bottom: 0.1em;
+}
+
+#search button {
+    position: relative;
+    bottom: 1em;
+}
+
+
 /* --- Location Selection ---*/
 #location {
     margin: auto;
@@ -42,6 +56,8 @@ li div {
     border-width: 0 6px 6px 0;
     display: inline-block;
     padding: 6px;
+    margin-left: 4em;
+    margin-bottom: 0.1em;
   }
   
   .right {
