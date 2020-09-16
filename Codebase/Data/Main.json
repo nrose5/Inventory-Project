@@ -1,0 +1,16 @@
+{
+    "locations": [
+        {
+            "name": "Staging Shelves",
+            "order": 1
+        },
+        {
+            "name": "Room 50 Black Shelves",
+            "order": 0
+        },
+        {
+            "name": "Room 50 Table By Stereo",
+            "order": 2
+        }
+    ]
+}

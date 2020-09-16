@@ -11,6 +11,7 @@
   <link rel="shortcut icon" href="#" /> <!-- favicon.ico missing fix -->
   <link rel="stylesheet" href="main.css">
   <script src="Scripts/main.js"></script>
+  <script src="Libraries/jquery-3.5.1.js"></script>
 </head>
 
 <body>

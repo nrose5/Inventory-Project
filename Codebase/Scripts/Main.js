@@ -2,14 +2,40 @@
  * ISCT Inventory Project 2020
  */
 
+// Get target li (Used for drag & drop)
+function getLI( target ) {
+    while ( target.nodeName.toLowerCase() != 'li' && target.nodeName.toLowerCase() != 'body' ) {
+        target = target.parentNode;
+    }
+    if ( target.nodeName.toLowerCase() == 'body' ) {
+        return false;
+    } else {
+        return target;
+    }
+}
+
 // File read function
 function fetchFile(path, callback) {
     let httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function() {
         if (httpRequest.readyState === 4) {
             if (httpRequest.status === 200) {
-                data = httpRequest.responseText;
-                //let data = JSON.parse(httpRequest.responseText);
+                var data = httpRequest.responseText;
+                if (callback) callback(data);
+            }
+        }
+    };
+    httpRequest.open('GET', path);
+    httpRequest.send();
+}
+
+// JSON file read function
+function fetchJSONFile(path, callback) {
+    let httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState === 4) {
+            if (httpRequest.status === 200) {
+                var data = JSON.parse(httpRequest.responseText);
                 if (callback) callback(data);
             }
         }
@@ -20,25 +46,32 @@ function fetchFile(path, callback) {
 
 // Load locations
 function loadLoc() {
-    fetchFile("../Data/locations.txt", function(data) {
+    fetchJSONFile("../Data/Main.json", function(data) {
         var items = document.querySelector("#locationList").querySelector("ul").querySelectorAll("li");
-        data = data.split("\n");
+        data = data['locations'];
         // Delete old entries
         for (let i = 1; i < items.length; i++) {
             items[i].remove();   
         }
 
         // Write current entries
-        for (let i = 0; i < data.length; i++) {
+        var loaded = [];
+        for (let i = 0; i < data.length; i++) {    
+            var minimum = Infinity;
+            var selected = -1;
+
+            // get hidden node and clone it
             var li = document.querySelector("#locationList").querySelector("ul").querySelector("li");
             var li2 = li.cloneNode(true);
             document.querySelector("#locationList").querySelector("ul").appendChild(li2);
             
+            // Add name click event
             li2.querySelector(".name").addEventListener('click', function(e){
                 var text = e.target.innerHTML;
                 console.log(text);
             });
 
+            // Add edit event
             li2.querySelector(".edit").addEventListener('click', function(e){
                 var text = e.target.parentNode.querySelector("div").innerHTML;
                 var name = prompt("Please enter the location of your inventory", text);
@@ -47,13 +80,25 @@ function loadLoc() {
                 }
             });
 
+            // Add delete event
             li2.querySelector(".delete").addEventListener('click', function(e){
                 var text = e.target.parentNode.querySelector("div").innerHTML;
                 if (prompt("Do you want to delete " + text + "?\n This cannot be undone and will permanantly delete the data!\n Type \'Delete' to confirm. ") == 'Delete') {
                     e.target.parentNode.remove();
                 }
             });
-            li2.querySelector(".name").innerHTML = data[i];
+
+            // Find ordering of list items
+            for (let i = 0; i < data.length; i++) {
+                if (data[i]['order'] < minimum && !loaded.includes(data[i]['order'])) {
+                    minimum = data[i]['order'];
+                    selected = i;
+                }
+            }
+            loaded.push(minimum);
+
+            // Add name to list item
+            li2.querySelector(".name").innerHTML = data[selected]['name'];
             li2.removeAttribute("style");
         }
     });
@@ -61,6 +106,7 @@ function loadLoc() {
 
 // Wait for window to load
 window.onload = function() {
+
     // --- Search ---
     var search = document.querySelector("#search").querySelector("textarea");
     search.addEventListener("click", function(e){
@@ -71,13 +117,6 @@ window.onload = function() {
 
     // --- Location Selection ---
     loadLoc();
-
-    var name = "test";
-    var li = document.querySelector("#locationList").querySelector("ul").querySelector("li");
-    var li2 = li.cloneNode(true);
-    document.querySelector("#locationList").querySelector("ul").appendChild(li2);
-    li2.querySelector(".name").innerHTML = name;
-    li2.removeAttribute("style");
 
     // Expand location list
     document.querySelector("#location").addEventListener('click', function(event){
@@ -179,7 +218,23 @@ window.onload = function() {
                 index[1] = i-1;
             }
         }
-        console.log(index);
+        
+        // Send index to PHP swap function
+        jQuery.ajax({
+            type: "POST",
+            url: 'Scripts/locationFunctions.php',
+            dataType: 'json',
+            data: {functionname: 'swap', arguments: [index[0], index[1]]},
+        
+            success: function (obj, textstatus) {
+                if( !('error' in obj) ) {
+                    console.log(obj.result);
+                }
+                else {
+                    console.log(obj.error);
+                }
+            }
+        });    
     });
 
     // Edit name
@@ -247,15 +302,3 @@ window.onload = function() {
         }
     });
 };
-
-// Get target li
-function getLI( target ) {
-    while ( target.nodeName.toLowerCase() != 'li' && target.nodeName.toLowerCase() != 'body' ) {
-        target = target.parentNode;
-    }
-    if ( target.nodeName.toLowerCase() == 'body' ) {
-        return false;
-    } else {
-        return target;
-    }
-}
