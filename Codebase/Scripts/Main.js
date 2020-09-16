@@ -56,7 +56,7 @@ function loadLoc() {
 
         // Write current entries
         var loaded = [];
-        for (let i = 0; i < data.length; i++) {    
+        for (let i = 0; i < data.length; i++) {   
             var minimum = Infinity;
             var selected = -1;
 
@@ -73,10 +73,44 @@ function loadLoc() {
 
             // Add edit event
             li2.querySelector(".edit").addEventListener('click', function(e){
+                var names = [];
+                var targets = document.querySelector("#locationList").querySelector("ul").querySelectorAll("li");
+                for (let i = 0; i < targets.length; i++) {
+                    names.push(targets[i].querySelector("div").innerHTML);
+                }
                 var text = e.target.parentNode.querySelector("div").innerHTML;
                 var name = prompt("Please enter the location of your inventory", text);
-                if (name!=null && name != "") {
+                if (name!=null && name != "" && !names.includes(name)) {
+
+                    //Update name on webpage
                     e.target.parentNode.querySelector("div").innerHTML = name;
+
+                    // Get order of element
+                    var order = -1;
+                    var targets = document.querySelector("#locationList").querySelector("ul").querySelectorAll("li");
+                    for (let i = 1; i < targets.length; i++) {
+                        if (e.target.parentNode == targets[i]) {
+                            order = i-1;
+                            break;
+                        }
+                    }
+
+                    // Call edit from PHP
+                    jQuery.ajax({
+                        type: "POST",
+                        url: 'Scripts/locationFunctions.php',
+                        dataType: 'json',
+                        data: {functionname: 'edit', arguments: [order, name]},
+                    
+                        success: function (obj, textstatus) {
+                            if ( !('error' in obj) ) {
+                                console.log(obj.result);
+                            }
+                            else {
+                                console.log(obj.error);
+                            }
+                        }
+                    });    
                 }
             });
 
@@ -84,8 +118,34 @@ function loadLoc() {
             li2.querySelector(".delete").addEventListener('click', function(e){
                 var text = e.target.parentNode.querySelector("div").innerHTML;
                 if (prompt("Do you want to delete " + text + "?\n This cannot be undone and will permanantly delete the data!\n Type \'Delete' to confirm. ") == 'Delete') {
+                    // Get order of element
+                    var order = -1;
+                    var targets = document.querySelector("#locationList").querySelector("ul").querySelectorAll("li");
+                    for (let i = 1; i < targets.length; i++) {
+                        if (e.target.parentNode == targets[i]) {
+                            order = i-1;
+                            break;
+                        }
+                    }
                     e.target.parentNode.remove();
-                }
+
+                    // Call delete from PHP
+                    jQuery.ajax({
+                        type: "POST",
+                        url: 'Scripts/locationFunctions.php',
+                        dataType: 'json',
+                        data: {functionname: 'delete', arguments: [order]},
+                    
+                        success: function (obj, textstatus) {
+                            if ( !('error' in obj) ) {
+                                console.log(obj.result);
+                            }
+                            else {
+                                console.log(obj.error);
+                            }
+                        }
+                    });   
+                } 
             });
 
             // Find ordering of list items
@@ -218,7 +278,7 @@ window.onload = function() {
                 index[1] = i-1;
             }
         }
-        
+
         // Send index to PHP swap function
         jQuery.ajax({
             type: "POST",
@@ -237,66 +297,122 @@ window.onload = function() {
         });    
     });
 
-    // Edit name
-    var targets = document.querySelector("#locationList").querySelector("ul").querySelectorAll("li");
-    for (var i = 0; i < targets.length; i++) {
-        targets[i].querySelector(".edit").addEventListener('click', function(e){
-            var text = e.target.parentNode.querySelector("div").innerHTML;
-            var name = prompt("Please enter the location of your inventory", text);
-            if (name!=null && name != "") {
-                e.target.parentNode.querySelector("div").innerHTML = name;
-            }
-        });
-    }
-
-    // Remove entry
-    var targets = document.querySelector("#locationList").querySelector("ul").querySelectorAll("li");
-    for (var i = 0; i < targets.length; i++) {
-        targets[i].querySelector(".delete").addEventListener('click', function(e){
-            var text = e.target.parentNode.querySelector("div").innerHTML;
-            if (prompt("Do you want to delete " + text + "?\n This cannot be undone and will permanantly delete the data!\n Type \'Delete' to confirm. ") == 'Delete') {
-                e.target.parentNode.remove();
-            }
-        });
-    }
-
-    // Select entry
-    var targets = document.querySelector("#locationList").querySelector("ul").querySelectorAll("li");
-    for (var i = 0; i < targets.length; i++) {
-        targets[i].querySelector(".name").addEventListener('click', function(e){
-            var text = e.target.innerHTML;
-            console.log(text);
-        });
-    }
-
     // Create new entry
     document.querySelector("#newLocation").addEventListener('click', function(){
+        
+        var names = [];
+        var order;
+        var targets = document.querySelector("#locationList").querySelector("ul").querySelectorAll("li");
+        for (let i = 0; i < targets.length; i++) {
+            names.push(targets[i].querySelector("div").innerHTML);
+        }
+        order = targets.length-1;
+
         var name = prompt("Please enter the new inventory location", "");
-        if (name!=null && name != "") {
+        if (name!=null && !names.includes(name) && name != "locations") {
+            jQuery.ajax({
+                type: "POST",
+                url: 'Scripts/locationFunctions.php',
+                dataType: 'json',
+                data: {functionname: 'new', arguments: [order, name]},
+            
+                success: function (obj, textstatus) {
+                    if ( !('error' in obj) ) {
+                        console.log(obj.result);
+                    }
+                    else {
+                        console.log(obj.error);
+                    }
+                }
+            });
 
             var li = document.querySelector("#locationList").querySelector("ul").querySelector("li");
             var li2 = li.cloneNode(true);
             document.querySelector("#locationList").querySelector("ul").appendChild(li2);
             
+            // Select name
             li2.querySelector(".name").addEventListener('click', function(e){
                 var text = e.target.innerHTML;
                 console.log(text);
             });
 
+            // Edit name
             li2.querySelector(".edit").addEventListener('click', function(e){
+                var names = [];
+                var targets = document.querySelector("#locationList").querySelector("ul").querySelectorAll("li");
+                for (let i = 0; i < targets.length; i++) {
+                    names.push(targets[i].querySelector("div").innerHTML);
+                }
                 var text = e.target.parentNode.querySelector("div").innerHTML;
                 var name = prompt("Please enter the location of your inventory", text);
-                if (name!=null && name != "") {
+                if (name!=null && name != "" && !names.includes(name)) {
+
+                    // Update name on webpage
                     e.target.parentNode.querySelector("div").innerHTML = name;
+
+                    // Get order of element
+                    var order = -1;
+                    var targets = document.querySelector("#locationList").querySelector("ul").querySelectorAll("li");
+                    for (let i = 1; i < targets.length; i++) {
+                        if (e.target.parentNode == targets[i]) {
+                            order = i-1;
+                            break;
+                        }
+                    }
+
+                    // Call PHP edit function
+                    jQuery.ajax({
+                        type: "POST",
+                        url: 'Scripts/locationFunctions.php',
+                        dataType: 'json',
+                        data: {functionname: 'edit', arguments: [order, name]},
+                    
+                        success: function (obj, textstatus) {
+                            if ( !('error' in obj) ) {
+                                console.log(obj.result);
+                            }
+                            else {
+                                console.log(obj.error);
+                            }
+                        }
+                    });
                 }
             });
 
+            // Remove entry
             li2.querySelector(".delete").addEventListener('click', function(e){
                 var text = e.target.parentNode.querySelector("div").innerHTML;
                 if (prompt("Do you want to delete " + text + "?\n This cannot be undone and will permanantly delete the data!\n Type \'Delete' to confirm. ") == 'Delete') {
+                    // Get order of element
+                    var order = -1;
+                    var targets = document.querySelector("#locationList").querySelector("ul").querySelectorAll("li");
+                    for (let i = 1; i < targets.length; i++) {
+                        if (e.target.parentNode == targets[i]) {
+                            order = i-1;
+                            break;
+                        }
+                    }
                     e.target.parentNode.remove();
+
+                    // Call delete from PHP
+                    jQuery.ajax({
+                        type: "POST",
+                        url: 'Scripts/locationFunctions.php',
+                        dataType: 'json',
+                        data: {functionname: 'delete', arguments: [order]},
+                    
+                        success: function (obj, textstatus) {
+                            if ( !('error' in obj) ) {
+                                console.log(obj.result);
+                            }
+                            else {
+                                console.log(obj.error);
+                            }
+                        }
+                    });   
                 }
             });
+            
             li2.querySelector(".name").innerHTML = name;
             li2.removeAttribute("style");
         }
