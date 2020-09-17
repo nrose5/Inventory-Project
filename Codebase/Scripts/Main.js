@@ -417,4 +417,23 @@ window.onload = function() {
             li2.removeAttribute("style");
         }
     });
+
+    // Expand data
+    document.querySelector("#dataHeader").addEventListener('click', function(event){
+        // Update arrow graphic
+        var target = document.querySelector("#dataHeader").querySelector(".arrow");
+        if (target.getAttribute("class") == "arrow right") {
+            target.setAttribute("class", "arrow down");
+        } else {
+            target.setAttribute("class", "arrow right")
+        }
+
+        // Show/Hide location list
+        target = document.querySelector("#data");
+        if (target.style['display'] == 'none') {
+            target.style['display'] = 'block';
+        } else {
+            target.style['display'] = 'none';
+        }
+    });
 };

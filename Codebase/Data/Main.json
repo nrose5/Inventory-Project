@@ -1,16 +1,44 @@
 {
     "locations": [
         {
-            "name": "Room 50 Shelf 2",
-            "order": 0
-        },
-        {
             "name": "Room 50 Black Shelves",
-            "order": 1
+            "order": 3
         },
         {
             "name": "Room 56",
             "order": 2
+        },
+        {
+            "name": "Room 50 Shelf 2",
+            "order": 4
+        },
+        {
+            "name": "Room 50 Shelf 1",
+            "order": 0
+        },
+        {
+            "name": "Shop by drill press",
+            "order": 1
+        }
+    ],
+    "Room 56": [
+        {
+            "categories": [
+                "model",
+                "P\/N",
+                "Count"
+            ],
+            "entries": [
+                {
+                    "model": "DMPS3",
+                    "P\/N": 921391923,
+                    "Count": 7
+                },
+                {
+                    "model": "Touch Panel 760",
+                    "Count": 80
+                }
+            ]
         }
     ]
 }

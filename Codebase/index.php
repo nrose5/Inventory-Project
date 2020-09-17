@@ -27,7 +27,7 @@
     <span class="arrow down" style="text-align: right;"></span>
   </div>
 
-  <div id="locationList" style="display: block; width: 30em;">
+  <div id="locationList" style="width: 30em;">
     <ul>
       <li draggable="true" style="display: none;">
         <div class="name" style="width: 20em; cursor: pointer;">Default</div>
@@ -38,10 +38,24 @@
     <button id="newLocation" style="width: 100%;">New Location</button>
   </div>
 
-  <!-- Categories -->
+  <p></p>
 
   <!-- Data -->
+  <div id="dataHeader" style="width: 35em; margin:auto; cursor: pointer;">
+    <span>Show/Hide Data</span>
+    <span class="arrow right" style="text-align: right;"></span>
+  </div>
 
+  <div id="data" style="display: none; width: 70em;">
+    <ul>
+      <li draggable="true" style="display: none;">
+        <div class="name" style="width: 20em; cursor: pointer;">Default</div>
+        <div class="edit" style="width: 2em; margin-right: 2em; cursor: pointer;">Edit</div>
+        <div class="delete" style="cursor: pointer;">Delete</div>
+      </li>
+    </ul>
+    <button id="newEntry" style="display: none; width: 100%;">New Entry</button>
+  </div>
 
 </body>
 </html>

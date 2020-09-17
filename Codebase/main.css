@@ -32,18 +32,30 @@ button {
     margin: auto;
 }
 
+/* Data */
+#dataHeader {
+    margin: auto;
+    font-size: 2em;
+    background-color: rgb(119, 136, 119);
+    color: black;
+}
+
+#data {
+  margin: auto;
+}
+
 ul {
     margin:0;
     padding:0;
   }
 li {
-    cursor:move;
-    display:block;
-    padding:20px 10px;
-    background:white;
-    border-bottom:solid 1px gray;
-    border-left:solid 1px gray;
-    border-right:solid 1px gray;
+    cursor: move;
+    display: block;
+    padding: 20px 10px;
+    background: white;
+    border-bottom: solid 1px gray;
+    border-left: solid 1px gray;
+    border-right: solid 1px gray;
     text-align: left;
 }
 

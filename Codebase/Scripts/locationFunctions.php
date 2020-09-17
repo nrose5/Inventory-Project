@@ -70,8 +70,9 @@
 
                     $dataCopy = array();
                     $j = 0;
+                    $name = '';
 
-                    // Change name
+                    // Add all entries except the deleted one, adjust order
                     for ($i=0; $i < count($data['locations']); $i++) {
                         if ($data['locations'][$i]['order'] != floatval($_POST['arguments'][0])) {
                             if ($data['locations'][$i]['order'] > floatval($_POST['arguments'][0])) {
@@ -79,15 +80,26 @@
                             }
                             $dataCopy[$j] = $data['locations'][$i];
                             $j++;
+                        } else {
+                            $name = $data['locations'][$i]['name'];
                         }
                     }
 
                     $data['locations'] = $dataCopy;
 
+                    // Delete entry in inventory
+                    $dataCopy = array();
+                    for ($i=0; $i < count(array_keys($data)); $i++) {
+                        if (array_keys($data)[$i] != $name) {
+                            $dataCopy[array_keys($data)[$i]] = $data[array_keys($data)[$i]];
+                        }
+                    }
+
                     // Update JSON
-                    $newJsonString = json_encode($data, JSON_PRETTY_PRINT);
+                    $newJsonString = json_encode($dataCopy, JSON_PRETTY_PRINT);
                     file_put_contents($path, $newJsonString);
-                    $aResult['result'] = 'Deleting item in order: '.$_POST['arguments'][0];
+
+                    //$aResult['result'] = "Deleting location: ".json_encode($dataCopy, JSON_PRETTY_PRINT);
                 } else {
                     $aResult['error'] = 'File not found';
                 }
@@ -102,15 +114,28 @@
                     $jsonString = file_get_contents($path);
                     $data = json_decode($jsonString, true);
 
+                    $oldName = '';
+
                     // Change name
                     for ($i=0; $i < count($data['locations']); $i++) {
                         if ($data['locations'][$i]['order'] == floatval($_POST['arguments'][0])) {
+                            $oldName = $data['locations'][$i]['name'];
                             $data['locations'][$i]['name'] = $_POST['arguments'][1];
                         }
                     }
 
+                    // Update name in inventory
+                    $dataCopy = array();
+                    for ($i=0; $i < count(array_keys($data)); $i++) {
+                        if (array_keys($data)[$i] == $oldName) {
+                                $dataCopy[$_POST['arguments'][1]] = $data[$oldName];
+                        } else {
+                            $dataCopy[array_keys($data)[$i]] = $data[array_keys($data)[$i]];
+                        }
+                    }
+
                     // Update JSON
-                    $newJsonString = json_encode($data, JSON_PRETTY_PRINT);
+                    $newJsonString = json_encode($dataCopy, JSON_PRETTY_PRINT);
                     file_put_contents($path, $newJsonString);
                     $aResult['result'] = 'Name changed to: '.$_POST['arguments'][1].' at order: '.$_POST['arguments'][0];
                 } else {
@@ -131,6 +156,9 @@
                     // Update name and order
                     $data['locations'][count($data['locations'])]['name'] = $_POST['arguments'][1];
                     $data['locations'][count($data['locations'])-1]['order'] = floatval($_POST['arguments'][0]);
+
+                    // Create new entry
+                    $data[$_POST['arguments'][1]] = [];
 
                     // Update JSON
                     $newJsonString = json_encode($data, JSON_PRETTY_PRINT);
