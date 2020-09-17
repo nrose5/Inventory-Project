@@ -1,24 +1,20 @@
 {
     "locations": [
         {
-            "name": "Room 50 Black Shelves",
-            "order": 3
-        },
-        {
             "name": "Room 56",
-            "order": 2
-        },
-        {
-            "name": "Room 50 Shelf 2",
-            "order": 4
-        },
-        {
-            "name": "Room 50 Shelf 1",
             "order": 0
         },
         {
-            "name": "Shop by drill press",
+            "name": "Room 57",
             "order": 1
+        },
+        {
+            "name": "Room 58 Shelf 1",
+            "order": 2
+        },
+        {
+            "name": "Room 58 Shelf 2",
+            "order": 3
         }
     ],
     "Room 56": [
@@ -40,5 +36,8 @@
                 }
             ]
         }
-    ]
+    ],
+    "Room 57": [],
+    "Room 58 Shelf 1": [],
+    "Room 58 Shelf 2": []
 }

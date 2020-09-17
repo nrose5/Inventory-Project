@@ -17,6 +17,7 @@ button {
 #search button {
     position: relative;
     bottom: 1em;
+    padding: 0.75em 0.75em;
 }
 
 
@@ -40,8 +41,33 @@ button {
     color: black;
 }
 
-#data {
+/* Categories */
+#categoryHeader {
   margin: auto;
+    font-size: 2em;
+    background-color: rgb(216, 216, 216);
+    color: black;
+}
+
+#categoryEntries * {
+  display: inline-block;
+}
+
+#categoryEntries button {
+  padding: 20px 10px;
+  text-align: left;
+}
+
+/* Entries */
+#entries {
+  margin: auto;
+}
+
+#entryHeader {
+  margin: auto;
+  font-size: 2em;
+  background-color: rgb(216, 216, 216);
+  color: black;
 }
 
 ul {

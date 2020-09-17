@@ -23,7 +23,7 @@
 
   <!-- Locations -->
   <div id="location" style="width: 15em; margin:auto; cursor: pointer;">
-    <span>Select Location...</span>
+    <span>Select Location</span>
     <span class="arrow down" style="text-align: right;"></span>
   </div>
 
@@ -40,21 +40,50 @@
 
   <p></p>
 
-  <!-- Data -->
-  <div id="dataHeader" style="width: 35em; margin:auto; cursor: pointer;">
-    <span>Show/Hide Data</span>
-    <span class="arrow right" style="text-align: right;"></span>
-  </div>
+  <div id="data">
+    <!-- Data -->
+    <div id="dataHeader" style="display: none; width: 35em; margin:auto; cursor: pointer;">
+      <span>Show/Hide Data</span>
+      <span class="arrow right" style="text-align: right;"></span>
+    </div>
 
-  <div id="data" style="display: none; width: 70em;">
-    <ul>
-      <li draggable="true" style="display: none;">
-        <div class="name" style="width: 20em; cursor: pointer;">Default</div>
-        <div class="edit" style="width: 2em; margin-right: 2em; cursor: pointer;">Edit</div>
-        <div class="delete" style="cursor: pointer;">Delete</div>
-      </li>
-    </ul>
-    <button id="newEntry" style="display: none; width: 100%;">New Entry</button>
+    <!-- Categories -->
+    <div id="categories" style="display: none;">
+      <div id="categoryHeader" style="width: 35em;"> 
+        <span>Categories</span>
+      </div>
+      <div id="categoryEntries"> 
+        <ul>
+          <li draggable="true">
+            <div class="name" style="width: 15em; cursor: pointer;">Default</div>
+          </li>
+          <li draggable="true">
+            <div class="name" style="width: 15em; cursor: pointer;">Default</div>
+          </li>
+          <li draggable="true">
+            <div class="name" style="width: 15em; cursor: pointer;">Default</div>
+          </li>
+        </ul>
+        <button style="width: 10em;">Add Category</button>
+      </div>
+    </div>
+
+    <!-- Entries -->
+    <div id="entries" style="display: none; width: 70em;">
+      <div id="entryHeader">
+        <span>Entries</span>
+      </div>
+      <div id="dataEntries">
+        <ul>
+          <li draggable="true" style="display: none">
+            <div class="name" style="width: 20em; cursor: pointer;">Default</div>
+            <div class="edit" style="width: 2em; margin-right: 2em; cursor: pointer;">Edit</div>
+            <div class="delete" style="cursor: pointer;">Delete</div>
+          </li>
+        </ul>
+        <button id="newEntry" style="width: 100%;">New Entry</button>
+      </div>
+    </div>
   </div>
 
 </body>
