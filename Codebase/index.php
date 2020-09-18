@@ -68,14 +68,14 @@
         <span>Entries</span>
       </div>
       <div id="dataEntries">
-        <div id="dataEntry" draggable="true" style="width:70em; margin: auto;">
+        <div id="dataEntry" draggable="true" style="width:70em; margin: auto; display:none">
             <div id="name" style="padding-left: 1%; width: 26%; height: 3em;">Default</div>
             <div id="add" style="width: 4%; cursor: pointer;">+</div>
             <div id="subtract" style="width: 4%; cursor: pointer;">-</div>
             <div id="edit" style="width: 4%; cursor: pointer;">Edit</div>
             <div id="delete" style="width: 4%; cursor: pointer;">Delete</div>
         </div>
-        <div id="dataSection" draggable="true" style="width: 70em display:none";>
+        <div id="dataSection" draggable="true" style="width: 70em; display:none";>
           <div id="header" style="width: 82%;"> Section 1 </div>
           <div id="edit" style="width: 8%; height: 0.5em; cursor: pointer;"> Edit </div>
           <div id="delete" style="width: 8%; height: 0.5em; cursor: pointer;"> Delete </div>
