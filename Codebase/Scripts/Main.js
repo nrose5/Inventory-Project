@@ -2,6 +2,9 @@
  * ISCT Inventory Project 2020
  */
 
+// Current Dataset
+var current = null;
+
 // Get target li (Used for drag & drop)
 function getLI( target ) {
     while ( target.nodeName.toLowerCase() != 'li' && target.nodeName.toLowerCase() != 'body' ) {
@@ -89,6 +92,8 @@ function loadLoc() {
                 // Show/Hide data list
                 target = document.querySelector("#entries");
                 target.style['display'] = 'block';
+
+                loadData(text);
             });
 
             // Add edit event
@@ -182,6 +187,40 @@ function loadLoc() {
             li2.removeAttribute("style");
         }
     });
+}
+
+function loadData(name) {
+    console.log("Loading data for: ", name);
+
+    // Create HTML elements from JSON data
+
+    // --Category events
+    // Edit
+    
+    // Delete
+
+    // Swap
+
+
+    // --Entry events
+    // Edit
+
+    // Delete
+
+    // Swap
+
+    // Increment Count
+
+    // Decrement Count
+
+
+    // --Section events
+    // Edit
+
+    // Delete
+
+    // Swap
+
 }
 
 // Wait for window to load
@@ -380,6 +419,8 @@ window.onload = function() {
                 // Show/Hide data list
                 target = document.querySelector("#entries");
                 target.style['display'] = 'block';
+
+                loadData(text);
             });
 
             // Edit name
@@ -491,5 +532,48 @@ window.onload = function() {
         } else {
             target.style['display'] = 'none';
         }
+    });
+
+    // TODO - Add category events
+    // Add category
+    document.querySelector("#addCategory").addEventListener("click", function(e){
+        var category = prompt("What is the name of the new category?");
+        console.log("Adding category: ", category);
+
+        // --Category events
+        // Edit
+        
+        // Delete
+
+        // Swap
+
+    });
+
+    // TODO - Add entry events
+    // Add entry https://www.w3schools.com/howto/howto_js_popup_form.asp
+    document.querySelector("#newEntry").addEventListener("click", function(e){
+        console.log("Adding entry");
+
+        // Create events based on type of entry (data entry vs section)
+
+        // --Entry events
+        // Edit
+
+        // Delete
+
+        // Swap
+
+        // Increment Count
+
+        // Decrement Count
+
+
+        // --Section events
+        // Edit
+
+        // Delete
+
+        // Swap
+
     });
 };

@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    word-wrap: break-word;
 }
 
 button {
@@ -66,7 +67,6 @@ button {
 #categoryEntries button {
   padding: 20px 10px;
   text-align: center;
-  margin-top: 1%;
 }
 
 #categoryEntry {
@@ -74,6 +74,10 @@ button {
   border-bottom: solid 1px gray;
   border-left: solid 1px gray;
   border-right: solid 1px gray;
+}
+
+#categoryEntry button {
+  margin-top: -1%;
 }
 
 /* Entries */
@@ -96,10 +100,6 @@ button {
   vertical-align: top;
 }
 
-#dataEntries * {
-  word-wrap: break-word;
-}
-
 #dataEntry div {
   cursor: move;
   display: inline-block;
@@ -112,14 +112,12 @@ button {
   text-align: left;
 }
 
-#dataEntry #add {
+#add {
   text-align: center;
-  margin-top: 1.5%;
 }
 
-#dataEntry #subtract {
+#subtract {
   text-align: center;
-  margin-top: 1.5%;
 }
 
 #dataEntry #edit {
@@ -159,7 +157,6 @@ button {
   border-bottom: solid 1px gray;
   border-left: solid 1px gray;
   border-right: solid 1px gray;
-  margin-top: -0.15%;
 }
 
 #dataSection #delete {
@@ -169,7 +166,6 @@ button {
   border-bottom: solid 1px gray;
   border-left: solid 1px gray;
   border-right: solid 1px gray;
-  margin-top: -0.15%;
 }
 
 ul {
