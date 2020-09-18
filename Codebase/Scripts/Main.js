@@ -217,9 +217,11 @@ window.onload = function() {
         }
     });
 
+    // --- Drag and Drop Start ---
     // Dragging and dropping location list
     var dragging = null;
 
+    // --- Drag events
     // Show image when dragging
     document.querySelector("#locationList").addEventListener('dragstart', function(event) {
         var target = getLI( event.target );
@@ -316,6 +318,10 @@ window.onload = function() {
             }
         });    
     });
+
+    // Touch events
+    // TODO - Use Coordinates?
+    // --- Drag and Drop End ---
 
     // Create new location
     document.querySelector("#newLocation").addEventListener('click', function(){

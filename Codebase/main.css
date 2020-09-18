@@ -49,13 +49,31 @@ button {
     color: black;
 }
 
+#categoryEntries {
+  text-align: left;
+}
+
+#categoryEntries div {
+  text-align: center;
+  vertical-align: top;
+}
+
 #categoryEntries * {
   display: inline-block;
+  word-wrap: break-word;
 }
 
 #categoryEntries button {
   padding: 20px 10px;
-  text-align: left;
+  text-align: center;
+  margin-top: 1%;
+}
+
+#categoryEntry {
+  border-top: solid 1px gray;
+  border-bottom: solid 1px gray;
+  border-left: solid 1px gray;
+  border-right: solid 1px gray;
 }
 
 /* Entries */
@@ -68,6 +86,90 @@ button {
   font-size: 2em;
   background-color: rgb(216, 216, 216);
   color: black;
+}
+
+#dataEntries  {
+  text-align: left;
+}
+
+#dataEntries div {
+  vertical-align: top;
+}
+
+#dataEntries * {
+  word-wrap: break-word;
+}
+
+#dataEntry div {
+  cursor: move;
+  display: inline-block;
+  padding: 20px 0px;
+  background: white;
+  border-top: solid 1px gray;
+  border-bottom: solid 1px gray;
+  border-left: solid 1px gray;
+  border-right: solid 1px gray;
+  text-align: left;
+}
+
+#dataEntry #add {
+  text-align: center;
+  margin-top: 1.5%;
+}
+
+#dataEntry #subtract {
+  text-align: center;
+  margin-top: 1.5%;
+}
+
+#dataEntry #edit {
+  text-align: center;
+  margin-top: 1.5%;
+}
+
+#dataEntry #delete {
+  text-align: center;
+  margin-top: 1.5%;
+}
+
+#dataSection div {
+  vertical-align: top;
+  margin: auto;
+  display: inline-block;
+  font-size: 1em;
+  background-color: rgb(216, 216, 216);
+  color: black;
+  text-align: center;
+  border-top: solid 1px gray;
+  border-bottom: solid 1px gray;
+  border-left: solid 1px gray;
+  border-right: solid 1px gray;
+}
+
+#dataSection #header {
+  line-height: 2em;
+  font-size: 1.5em;
+  padding-bottom: -1%;
+}
+
+#dataSection #edit {
+  padding: 20px 0px;
+  background: white;
+  border-top: solid 1px gray;
+  border-bottom: solid 1px gray;
+  border-left: solid 1px gray;
+  border-right: solid 1px gray;
+  margin-top: -0.15%;
+}
+
+#dataSection #delete {
+  padding: 20px 0px;
+  background: white;
+  border-top: solid 1px gray;
+  border-bottom: solid 1px gray;
+  border-left: solid 1px gray;
+  border-right: solid 1px gray;
+  margin-top: -0.15%;
 }
 
 ul {

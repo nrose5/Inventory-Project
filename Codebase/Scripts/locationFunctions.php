@@ -159,6 +159,7 @@
 
                     // Create new entry
                     $data[$_POST['arguments'][1]] = [];
+                    $data[$_POST['arguments'][1]]['categories'] = ["count"];
 
                     // Update JSON
                     $newJsonString = json_encode($data, JSON_PRETTY_PRINT);

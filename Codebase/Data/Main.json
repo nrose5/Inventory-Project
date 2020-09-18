@@ -2,42 +2,52 @@
     "locations": [
         {
             "name": "Room 56",
-            "order": 0
+            "order": 3
         },
         {
-            "name": "Room 57",
+            "name": "Room 50 Shelf 2",
             "order": 1
         },
         {
-            "name": "Room 58 Shelf 1",
-            "order": 2
+            "name": "Shop by drill press",
+            "order": 0
         },
         {
-            "name": "Room 58 Shelf 2",
-            "order": 3
+            "name": "Room 50 Shelf 3",
+            "order": 2
         }
     ],
-    "Room 56": [
-        {
-            "categories": [
-                "model",
-                "P\/N",
-                "Count"
-            ],
-            "entries": [
-                {
-                    "model": "DMPS3",
-                    "P\/N": 921391923,
-                    "Count": 7
-                },
-                {
-                    "model": "Touch Panel 760",
-                    "Count": 80
-                }
-            ]
-        }
-    ],
-    "Room 57": [],
-    "Room 58 Shelf 1": [],
-    "Room 58 Shelf 2": []
+    "Room 56": {
+        "categories": [
+            "model",
+            "P\/N",
+            "Count"
+        ],
+        "entries": [
+            {
+                "model": "DMPS3",
+                "P\/N": 921391923,
+                "Count": 7
+            },
+            {
+                "model": "Touch Panel 760",
+                "Count": 80
+            }
+        ]
+    },
+    "Room 50 Shelf 2": {
+        "categories": [
+            "count"
+        ]
+    },
+    "Shop by drill press": {
+        "categories": [
+            "count"
+        ]
+    },
+    "Room 50 Shelf 3": {
+        "categories": [
+            "count"
+        ]
+    }
 }
