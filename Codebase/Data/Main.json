@@ -2,11 +2,11 @@
     "locations": [
         {
             "name": "Room 56",
-            "order": 3
+            "order": 1
         },
         {
             "name": "Room 50 Shelf 2",
-            "order": 1
+            "order": 2
         },
         {
             "name": "Shop by drill press",
@@ -14,7 +14,7 @@
         },
         {
             "name": "Room 50 Shelf 3",
-            "order": 2
+            "order": 3
         }
     ],
     "Room 56": {

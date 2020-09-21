@@ -549,14 +549,37 @@ window.onload = function() {
 
     });
 
+    // Hide display on cancel
+    document.querySelector("#entryForm #buttons #cancel").addEventListener("click", function(e){
+        document.querySelector("#entryForm").style['display'] = 'none';
+    });
+
+    // Switch fields on toggle
+    document.querySelector("#entryForm #entryToggle .switch input").addEventListener("click", function(e) {
+        var target = e.target;
+        if (target.checked) {
+            document.querySelector("#entryForm div h1").innerHTML = "New Section";
+            document.querySelector("#entryFields").style['display'] = 'none';
+            document.querySelector("#sectionFields").style['display'] = 'inline-block';
+        } else {
+            document.querySelector("#entryForm div h1").innerHTML = "New Entry";
+            document.querySelector("#entryFields").style['display'] = 'inline-block';
+            document.querySelector("#sectionFields").style['display'] = 'none';
+        }
+    });
+
     // TODO - Add entry events
     // Add entry https://www.w3schools.com/howto/howto_js_popup_form.asp
     document.querySelector("#newEntry").addEventListener("click", function(e){
         console.log("Adding entry");
 
         // Create events based on type of entry (data entry vs section)
+        // --Launch Form
+        document.querySelector("#entryForm").style['display'] = '';
 
-        // --Entry events
+        // Hide display on submit IF required fields are filled
+
+        // --Add entry events
         // Edit
 
         // Delete

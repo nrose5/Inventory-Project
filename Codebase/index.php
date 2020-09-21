@@ -15,6 +15,42 @@
 </head>
 
 <body>
+  <!-- Entry Form -->
+  <div id="entryForm" style="z-index: 1; text-align: left;  display: none;">
+    <div style="width: 80%; padding-left: 1%"> 
+      <h1>New Entry</h1>
+    </div>
+
+    <!-- Entry/Section Switch -->
+    <div id="entryToggle" style="width: 10%; height: 50%; padding-left: 5%; padding-top: 1%; position: absolute;">
+      <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+      </label>    
+      <p>Entry/Selection</p>
+    </div>
+
+    <!-- Text Fields -->
+    <div id="fields" style="width: 70%; height: 50%; padding-left: 1%; padding-top: 1%;">
+      <div id="sectionFields" style="width: 100%;display: none;">
+          <span>name: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
+      </div>
+      <div id="entryFields" style="width: 100%;">
+          <span>Category 1: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
+          <span>Category 2: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
+          <span>Category 3: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
+          <span>Category 4: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
+          <span>Count: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
+      </div>
+    </div>
+
+    <!-- Cancel/Submit Buttons -->
+    <div id="buttons" style="width: 100%; padding-left: 80%;">
+      <button id="cancel">Cancel</button>
+      <button id="submit">Submit</button>
+    </div>
+  </div>
+
   <!-- Search -->
   <div id="search">
     <button>Search</button>
@@ -88,7 +124,7 @@
       -->
       <div id="dataEntries">
         <div id="dataEntry" draggable="true" style="width:70em; margin: auto;">
-            <div id="name" style="padding-left: 1%; width: 87.5%; height: 3em;">Default</div>
+            <div id="name" style="padding-left: 1%; width: 87.5%; height: 3em;">0</div>
             <div style="border: none;">
               <div id="add" style="text-align: center; width: 1em; height: 1.5em; padding: 0; margin-bottom: 0.25em; cursor: pointer; display: block;">+</div>
               <div id="subtract" style="text-align: center; width: 1em; height: 1.5em; padding: 0; cursor: pointer; display: block;">-</div>
@@ -101,7 +137,7 @@
           <div id="edit" style="width: 5%; height: 0.5em; cursor: pointer;"> Edit </div>
           <div id="delete" style="width: 5%; height: 0.5em; cursor: pointer;"> Delete </div>
         </div>
-        <button id="newEntry" style="width: 100%;">New Entry</button>
+        <button id="newEntry" style="width: 100%;">New Entry/Section</button>
       </div>
     </div>
   </div>
