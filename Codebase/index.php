@@ -15,6 +15,30 @@
 </head>
 
 <body>
+  <!-- Entry Edit Form -->
+  <div id="editEntryForm" style="z-index: 1; text-align: left;  display: none;">
+    <div style="width: 80%; padding-left: 1%"> 
+      <h1>Edit Entry</h1>
+    </div>
+
+    <!-- Text Fields -->
+    <div id="fields" style="width: 98%; height: 50%; padding-left: 1%; padding-top: 1%;">
+      <div id="entryFields" style="width: 70%;">
+          <span>Category 1: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
+          <span>Category 2: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
+          <span>Category 3: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
+          <span>Category 4: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
+          <span>Count: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
+      </div>
+    </div>
+
+    <!-- Cancel/Submit Buttons -->
+    <div id="buttons" style="width: 100%; text-align: center; margin: 0;">
+      <button id="cancel">Cancel</button>
+      <button id="submit">Submit</button>
+    </div>
+  </div>
+
   <!-- Entry Form -->
   <div id="entryForm" style="z-index: 1; text-align: left;  display: none;">
     <div style="width: 80%; padding-left: 1%"> 
@@ -32,10 +56,10 @@
 
     <!-- Text Fields -->
     <div id="fields" style="width: 70%; height: 50%; padding-left: 1%; padding-top: 1%;">
-      <div id="sectionFields" style="width: 100%;display: none;">
+      <div id="sectionFields" style="width: 100%; height: 100%; display: none;">
           <span>name: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
       </div>
-      <div id="entryFields" style="width: 100%;">
+      <div id="entryFields" style="width: 100%; height: 100%;">
           <span>Category 1: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
           <span>Category 2: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
           <span>Category 3: <textarea style="resize: none; width: 100%; margin-bottom: 1%;"></textarea></span>
@@ -45,7 +69,7 @@
     </div>
 
     <!-- Cancel/Submit Buttons -->
-    <div id="buttons" style="width: 100%; padding-left: 80%;">
+    <div id="buttons" style="width: 100%; text-align: center; margin: 0;">
       <button id="cancel">Cancel</button>
       <button id="submit">Submit</button>
     </div>
@@ -58,17 +82,17 @@
   </div>
 
   <!-- Locations -->
-  <div id="location" style="width: 15em; margin:auto; cursor: pointer;">
+  <div id="location" style="width: 40%; margin:auto; cursor: pointer;">
     <span>Select Location</span>
     <span class="arrow down" style="text-align: right;"></span>
   </div>
 
-  <div id="locationList" style="width: 30em;">
+  <div id="locationList" style="width: 40%;">
     <ul>
       <li draggable="true" style="display: none;">
-        <div class="name" style="width: 20em; cursor: pointer;">Default</div>
-        <div class="edit" style="width: 2em; margin-right: 2em; cursor: pointer;">Edit</div>
-        <div class="delete" style="cursor: pointer;">Delete</div>
+        <div class="name" style="width: 75%; cursor: pointer;">Default</div>
+        <div class="edit" style="width: 10%; margin-right: 3%; cursor: pointer;">Edit</div>
+        <div class="delete" style="width: 10%; cursor: pointer;">Delete</div>
       </li>
     </ul>
     <button id="newLocation" style="width: 100%;">New Location</button>
@@ -78,52 +102,44 @@
 
   <div id="data">
     <!-- Data -->
-    <div id="dataHeader" style="display: none; width: 35em; margin:auto; cursor: pointer;">
+    <div id="dataHeader" style="display: none; width: 90%; margin:auto; cursor: pointer;">
       <span>Show/Hide Data</span>
       <span class="arrow right" style="text-align: right;"></span>
     </div>
 
     <!-- Categories -->
-    <div id="categories" style="display: none;">
-      <div id="categoryHeader" style="width: 35em;"> 
+    <div id="categories" style="display: none; width: 90%; margin:auto;">
+      
+    <div id="categoryHeader" style="width: 100%;"> 
         <span>Categories</span>
       </div>
-      <!-- 
-        Dimensions:
-        1 - 88.35
-        2 - 43.9
-        3 - 29.1
-        4 - 21.7
-        5 - 17.25
-      -->
-      <div id="categoryEntries" style="width: 70em; margin: auto;"> 
+      
+      <div id="categoryEntries" style="width: 100%; margin: auto;"> 
         <div id="categoryEntry" draggable="true" style="width: 88.35%; height: 3.5em;">
           <div class="name" style="width: 100%; height: 50%;">Count</div>
         </div>
+        
         <div id="categoryEntry" draggable="true" style="width: 43.9%; height: 3.5em; display: none;">
           <div class="name" style="width: 100%; height: 50%;">Count</div>
           <button id="edit" style="width: 35%; padding: 0px 10px;">Edit</button>
           <button id="delete" style="width: 35%; padding: 0px 10px;">Delete</button>
         </div>
+        
         <button id="addCategory" style="width: 11%; text-align:center;">Add Category</button>
+      
       </div>
     </div>
 
     <!-- Entries -->
-    <div id="entries" style="display: none; width: 70em;">
+    <div id="entries" style="display: none; width: 90%; margin:auto;">
+      
       <div id="entryHeader">
         <span>Entries</span>
       </div>
-      <!-- 
-        Dimensions:
-        1 - 87.5
-        2 - 43
-        3 - 28.2
-        4 - 20.7
-        5 - 16.25
-      -->
+
       <div id="dataEntries">
-        <div id="dataEntry" draggable="true" style="width:70em; margin: auto;">
+        
+        <div id="dataEntry" draggable="true" style="width: 100%; margin: auto;">
             <div id="name" style="padding-left: 1%; width: 87.5%; height: 3em;">0</div>
             <div style="border: none;">
               <div id="add" style="text-align: center; width: 1em; height: 1.5em; padding: 0; margin-bottom: 0.25em; cursor: pointer; display: block;">+</div>
@@ -132,12 +148,15 @@
             <div id="edit" style="width: 4%; cursor: pointer;">Edit</div>
             <div id="delete" style="width: 4%; cursor: pointer;">Delete</div>
         </div>
-        <div id="dataSection" draggable="true" style="width: 70em;";>
+        
+        <div id="dataSection" draggable="true" style="width: 100%;">
           <div id="header" style="width: 88.5%;"> Section 1 </div>
           <div id="edit" style="width: 5%; height: 0.5em; cursor: pointer;"> Edit </div>
           <div id="delete" style="width: 5%; height: 0.5em; cursor: pointer;"> Delete </div>
         </div>
+        
         <button id="newEntry" style="width: 100%;">New Entry/Section</button>
+      
       </div>
     </div>
   </div>
