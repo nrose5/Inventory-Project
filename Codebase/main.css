@@ -188,7 +188,6 @@ input:checked + .slider:before {
 }
 
 #categoryEntries button {
-  padding: 20px 10px;
   text-align: center;
 }
 
@@ -226,7 +225,6 @@ input:checked + .slider:before {
 #dataEntry div {
   cursor: move;
   display: inline-block;
-  padding: 20px 0px;
   background: white;
   border-top: solid 1px gray;
   border-bottom: solid 1px gray;
@@ -245,12 +243,10 @@ input:checked + .slider:before {
 
 #dataEntry #edit {
   text-align: center;
-  margin-top: 1.5%;
 }
 
 #dataEntry #delete {
   text-align: center;
-  margin-top: 1.5%;
 }
 
 #dataSection div {
@@ -267,14 +263,7 @@ input:checked + .slider:before {
   border-right: solid 1px gray;
 }
 
-#dataSection #header {
-  line-height: 2em;
-  font-size: 1.5em;
-  padding-bottom: -1%;
-}
-
 #dataSection #edit {
-  padding: 20px 0px;
   background: white;
   border-top: solid 1px gray;
   border-bottom: solid 1px gray;
@@ -283,7 +272,6 @@ input:checked + .slider:before {
 }
 
 #dataSection #delete {
-  padding: 20px 0px;
   background: white;
   border-top: solid 1px gray;
   border-bottom: solid 1px gray;

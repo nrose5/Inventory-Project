@@ -115,17 +115,17 @@
       </div>
       
       <div id="categoryEntries" style="width: 100%; margin: auto;"> 
-        <div id="categoryEntry" draggable="true" style="width: 88.35%; height: 3.5em;">
-          <div class="name" style="width: 100%; height: 50%;">Count</div>
-        </div>
-        
-        <div id="categoryEntry" draggable="true" style="width: 43.9%; height: 3.5em; display: none;">
-          <div class="name" style="width: 100%; height: 50%;">Count</div>
+        <div id="categoryEntry" draggable="true" style="display: none; width: 44.5%; padding-top: 2%; padding-bottom: 2%;">
+          <div id="name" style="width: 100%; height: 50%;">Temp</div>
           <button id="edit" style="width: 35%; padding: 0px 10px;">Edit</button>
           <button id="delete" style="width: 35%; padding: 0px 10px;">Delete</button>
-        </div>
+        </div
+
+        ><div id="categoryEntry" draggable="true" style="width: 89%; padding-top: 2%; padding-bottom: 4%;">
+          <div id="name" style="width: 100%; height: 50%;">Count</div>
+        </div
         
-        <button id="addCategory" style="width: 11%; text-align:center;">Add Category</button>
+        ><button id="addCategory" style="width: 10.5%; padding-top: 2%; padding-bottom: 4%; text-align:center;">Add Category</button>
       
       </div>
     </div>
@@ -140,19 +140,19 @@
       <div id="dataEntries">
         
         <div id="dataEntry" draggable="true" style="width: 100%; margin: auto;">
-            <div id="name" style="padding-left: 1%; width: 87.5%; height: 3em;">0</div>
-            <div style="border: none;">
-              <div id="add" style="text-align: center; width: 1em; height: 1.5em; padding: 0; margin-bottom: 0.25em; cursor: pointer; display: block;">+</div>
-              <div id="subtract" style="text-align: center; width: 1em; height: 1.5em; padding: 0; cursor: pointer; display: block;">-</div>
-            </div>
-            <div id="edit" style="width: 4%; cursor: pointer;">Edit</div>
-            <div id="delete" style="width: 4%; cursor: pointer;">Delete</div>
+            <div id="name" style="padding-left: 1%; width: 83.25%; padding-top: 2%; padding-bottom: 2%;">0</div
+            ><div style="border: none; width: 5%; padding-top: 0.5%; padding-bottom: 0.5%;">
+                <div id="add" style="margin-left: 25%; width: 50%; margin-bottom: 16%; cursor: pointer; display: block; text-align: center;">+</div
+                ><div id="subtract" style="margin-left: 25%; width: 50%; cursor: pointer; display: block; text-align: center;">-</div>
+            </div
+            ><div id="edit" style="width: 5%; padding-top: 2%; padding-bottom: 2%; cursor: pointer;">Edit</div
+            ><div id="delete" style="width: 5%; padding-top: 2%; padding-bottom: 2%; cursor: pointer;">Delete</div>
         </div>
         
         <div id="dataSection" draggable="true" style="width: 100%;">
-          <div id="header" style="width: 88.5%;"> Section 1 </div>
-          <div id="edit" style="width: 5%; height: 0.5em; cursor: pointer;"> Edit </div>
-          <div id="delete" style="width: 5%; height: 0.5em; cursor: pointer;"> Delete </div>
+          <div id="header" style="width: 89.25%; padding-top: 2%; padding-bottom: 2%;"><b> Section 1 </b></div
+          ><div id="edit" style="width: 5%; padding-top: 2%; padding-bottom: 2%; cursor: pointer;"> Edit </div
+          ><div id="delete" style="width: 5%; padding-top: 2%; padding-bottom: 2%; cursor: pointer;"> Delete </div>
         </div>
         
         <button id="newEntry" style="width: 100%;">New Entry/Section</button>
