@@ -1,6 +1,7 @@
 body {
     text-align: center;
     word-wrap: break-word;
+    border: none;
 }
 
 button {
@@ -192,10 +193,7 @@ input:checked + .slider:before {
 }
 
 #categoryEntry {
-  border-top: solid 1px gray;
-  border-bottom: solid 1px gray;
-  border-left: solid 1px gray;
-  border-right: solid 1px gray;
+  outline: 1px solid gray;
 }
 
 #categoryEntry button {
@@ -226,10 +224,7 @@ input:checked + .slider:before {
   cursor: move;
   display: inline-block;
   background: white;
-  border-top: solid 1px gray;
-  border-bottom: solid 1px gray;
-  border-left: solid 1px gray;
-  border-right: solid 1px gray;
+  outline: 1px solid gray;
   text-align: left;
 }
 
@@ -257,26 +252,15 @@ input:checked + .slider:before {
   background-color: rgb(216, 216, 216);
   color: black;
   text-align: center;
-  border-top: solid 1px gray;
-  border-bottom: solid 1px gray;
-  border-left: solid 1px gray;
-  border-right: solid 1px gray;
+  outline: 1px solid gray;
 }
 
 #dataSection #edit {
   background: white;
-  border-top: solid 1px gray;
-  border-bottom: solid 1px gray;
-  border-left: solid 1px gray;
-  border-right: solid 1px gray;
 }
 
 #dataSection #delete {
   background: white;
-  border-top: solid 1px gray;
-  border-bottom: solid 1px gray;
-  border-left: solid 1px gray;
-  border-right: solid 1px gray;
 }
 
 ul {
@@ -288,9 +272,7 @@ li {
     display: block;
     padding: 20px 10px;
     background: white;
-    border-bottom: solid 1px gray;
-    border-left: solid 1px gray;
-    border-right: solid 1px gray;
+    outline: 1px solid gray;
     text-align: left;
 }
 

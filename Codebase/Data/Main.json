@@ -26,6 +26,9 @@
         ],
         "entries": [
             {
+                "section": "Section 1"
+            },
+            {
                 "model": "DMPS3",
                 "Model": "Crestron",
                 "P\/N": 921391923,
@@ -48,56 +51,6 @@
         ]
     },
     "Room 50 Shelf 3": {
-        "categories": [
-            "count"
-        ]
-    },
-    "A": {
-        "categories": [
-            "count"
-        ]
-    },
-    "B": {
-        "categories": [
-            "count"
-        ]
-    },
-    "C": {
-        "categories": [
-            "count"
-        ]
-    },
-    "D": {
-        "categories": [
-            "count"
-        ]
-    },
-    "E": {
-        "categories": [
-            "count"
-        ]
-    },
-    "F": {
-        "categories": [
-            "count"
-        ]
-    },
-    "G": {
-        "categories": [
-            "count"
-        ]
-    },
-    "H": {
-        "categories": [
-            "count"
-        ]
-    },
-    "I": {
-        "categories": [
-            "count"
-        ]
-    },
-    "J": {
         "categories": [
             "count"
         ]

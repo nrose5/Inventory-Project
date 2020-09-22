@@ -110,22 +110,22 @@
     <!-- Categories -->
     <div id="categories" style="display: none; width: 90%; margin:auto;">
       
-    <div id="categoryHeader" style="width: 100%;"> 
+      <div id="categoryHeader" style="width: 100%;"> 
         <span>Categories</span>
       </div>
       
-      <div id="categoryEntries" style="width: 100%; margin: auto;"> 
-        <div id="categoryEntry" draggable="true" style="display: none; width: 44.5%; padding-top: 2%; padding-bottom: 2%;">
-          <div id="name" style="width: 100%; height: 50%;">Temp</div>
+      <div id="categoryEntries" style="width: 100%; margin: auto; cursor: move;"> 
+        <div id="categoryEntry" class="categoryEntryTemplate" draggable="true" style="display: none; width: 44.5%; padding-top: 2%; padding-bottom: 2%;">
+          <div id="name" style="width: 100%; height: 50%; cursor: move;">Temp</div>
           <button id="edit" style="width: 35%; padding: 0px 10px;">Edit</button>
           <button id="delete" style="width: 35%; padding: 0px 10px;">Delete</button>
         </div
 
-        ><div id="categoryEntry" draggable="true" style="width: 89%; padding-top: 2%; padding-bottom: 4%;">
-          <div id="name" style="width: 100%; height: 50%;">Count</div>
+        ><div id="categoryEntry" draggable="true" style="width: 90%; padding-top: 2%; padding-bottom: 4%;">
+          <div id="name" style="width: 100%; height: 50%; cursor: move;">Count</div>
         </div
         
-        ><button id="addCategory" style="width: 10.5%; padding-top: 2%; padding-bottom: 4%; text-align:center;">Add Category</button>
+        ><button id="addCategory" style="width: 10%; padding-top: 2%; padding-bottom: 4%; text-align:center;">Add Category</button>
       
       </div>
     </div>
@@ -139,18 +139,20 @@
 
       <div id="dataEntries">
         
-        <div id="dataEntry" draggable="true" style="width: 100%; margin: auto;">
-            <div id="name" style="padding-left: 1%; width: 83.25%; padding-top: 2%; padding-bottom: 2%;">0</div
-            ><div style="border: none; width: 5%; padding-top: 0.5%; padding-bottom: 0.5%;">
-                <div id="add" style="margin-left: 25%; width: 50%; margin-bottom: 16%; cursor: pointer; display: block; text-align: center;">+</div
-                ><div id="subtract" style="margin-left: 25%; width: 50%; cursor: pointer; display: block; text-align: center;">-</div>
-            </div
-            ><div id="edit" style="width: 5%; padding-top: 2%; padding-bottom: 2%; cursor: pointer;">Edit</div
-            ><div id="delete" style="width: 5%; padding-top: 2%; padding-bottom: 2%; cursor: pointer;">Delete</div>
+        <div id="dataEntry" class="dataEntryTemplate" draggable="true" style="width: 100%; margin: auto; height: 4em;">
+          <div style="width: 5%; height: 100%; padding-top: 2%; padding-bottom: 2%; text-align: center; cursor: pointer;">X</div
+          ><div id="name" style="padding-left: 1%; width: 79%; height: 100%; padding-top: 2%; padding-bottom: 2%;">0</div
+          ><div style="width: 5%; height: 100%; padding-top: 0.75%; padding-bottom: 0.5%;">
+            <div id="add" style="margin-left: 25%; width: 50%; margin-bottom: 16%; cursor: pointer; display: block; text-align: center;">+</div
+            ><div id="subtract" style="margin-left: 25%; width: 50%; cursor: pointer; display: block; text-align: center;">-</div>
+          </div
+          ><div id="edit" style="width: 5%; height: 100%; padding-top: 2%; padding-bottom: 2%; cursor: pointer;">Edit</div
+          ><div id="delete" style="width: 5%; height: 100%; padding-top: 2%; padding-bottom: 2%; cursor: pointer;">Delete</div>
         </div>
         
-        <div id="dataSection" draggable="true" style="width: 100%;">
-          <div id="header" style="width: 89.25%; padding-top: 2%; padding-bottom: 2%;"><b> Section 1 </b></div
+        <div id="dataSection" class="dataSectionTemplate" draggable="true" style="width: 100%;">
+          <div style="width: 5%; padding-top: 2%; padding-bottom: 2%; text-align: center; background-color: white; cursor: pointer;">X</div
+          ><div id="header" style="width: 85%; padding-top: 2%; padding-bottom: 2%; cursor: move;"><b> Section 1 </b></div
           ><div id="edit" style="width: 5%; padding-top: 2%; padding-bottom: 2%; cursor: pointer;"> Edit </div
           ><div id="delete" style="width: 5%; padding-top: 2%; padding-bottom: 2%; cursor: pointer;"> Delete </div>
         </div>

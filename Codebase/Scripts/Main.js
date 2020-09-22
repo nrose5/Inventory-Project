@@ -193,34 +193,54 @@ function loadData(name) {
     console.log("Loading data for: ", name);
 
     // Create HTML elements from JSON data
+    fetchJSONFile("../Data/Main.json", function(data) {
+        data = data[name];
+        console.log(data);
+        var categories = data["categories"];
 
-    // --Category events
-    // Edit
-    
-    // Delete
+        // Load categories
+        for (let i = 0; i < categories.length; i++) {
+            var current = categories[i];
+            // Create category element
 
-    // Swap
+            // --Category events
+            // Edit
+            
+            // Delete
+
+            // Swap
+        }
+        console.log(categories);
+
+        // Remove categories from data
+        data = data['entries'];
+
+        // Load entries and sections
+        for (let i = 0; i < data.length; i++) {
+            console.log(data[i]);
+            // Create entry/section element
+            
+            // --Entry events
+            // Edit
+
+            // Delete
+
+            // Swap
+
+            // Increment Count
+
+            // Decrement Count
 
 
-    // --Entry events
-    // Edit
+            // --Section events
+            // Edit
 
-    // Delete
+            // Delete
 
-    // Swap
-
-    // Increment Count
-
-    // Decrement Count
-
-
-    // --Section events
-    // Edit
-
-    // Delete
-
-    // Swap
-
+            // Swap
+            
+        }
+    });
 }
 
 // Wait for window to load

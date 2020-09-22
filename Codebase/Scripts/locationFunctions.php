@@ -99,7 +99,7 @@
                     $newJsonString = json_encode($dataCopy, JSON_PRETTY_PRINT);
                     file_put_contents($path, $newJsonString);
 
-                    //$aResult['result'] = "Deleting location: ".json_encode($dataCopy, JSON_PRETTY_PRINT);
+                    $aResult['result'] = "Deleting location: ".$name;
                 } else {
                     $aResult['error'] = 'File not found';
                 }
@@ -160,6 +160,7 @@
                     // Create new entry
                     $data[$_POST['arguments'][1]] = [];
                     $data[$_POST['arguments'][1]]['categories'] = ["count"];
+                    $data[$_POST['arguments'][1]]['entries'] = [];
 
                     // Update JSON
                     $newJsonString = json_encode($data, JSON_PRETTY_PRINT);
