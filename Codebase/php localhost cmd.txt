@@ -1,1 +1,1 @@
-php -S 127.0.0.1:8000 -t "C:\Users\nrose\OneDrive - University Of Oregon\IS-Inventory\Codebase"                                
+php -S 127.0.0.1:8000 -t ".\Codebase"                                
